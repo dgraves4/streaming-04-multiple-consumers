@@ -61,7 +61,7 @@ def main(hn: str = "localhost", qn: str = "task_queue"):
         # being consumed and processed concurrently.
         # This helps prevent a worker from becoming overwhelmed
         # and improve the overall system performance. 
-        # prefetch_count = Per consumer limit of unaknowledged messages      
+        # prefetch_count = Per consumer limit of unacknowledged messages      
         channel.basic_qos(prefetch_count=1) 
 
         # configure the channel to listen on a specific queue,  
