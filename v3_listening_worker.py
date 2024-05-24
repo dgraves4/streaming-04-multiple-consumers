@@ -81,5 +81,5 @@ def main(hn: str = "localhost", qn: str = "task_queue2"):
 # Standard Python idiom to indicate main program entry point
 if __name__ == "__main__":
     # Call the main function with the information needed
-    main("localhost", "task_queue2")
+    main("localhost", "dgraves4_task_queue")
 

@@ -1,0 +1,9 @@
+2024-05-24 15:48:57,168.v3_listening_worker.INFO ==================================================
+2024-05-24 15:48:57,168.v3_listening_worker.INFO Today is 2024-05-24 at 03:48 PM
+2024-05-24 15:48:57,169.v3_listening_worker.INFO Running on: nt Windows 11
+2024-05-24 15:48:57,169.v3_listening_worker.INFO Python version:  3.12.2
+2024-05-24 15:48:57,169.v3_listening_worker.INFO Python path: C:\Users\derek\OneDrive\Documents\Streaming Data\Week 4\streaming-04-multiple-consumers\.venv
+2024-05-24 15:48:57,169.v3_listening_worker.INFO Working dir: C:\Users\derek\OneDrive\Documents\Streaming Data\Week 4\streaming-04-multiple-consumers
+2024-05-24 15:48:57,169.v3_listening_worker.INFO ==================================================
+2024-05-24 15:48:57,180.v3_listening_worker.INFO Ready for work. To exit press CTRL+C
+2024-05-24 15:49:17,955.v3_listening_worker.INFO Received Second task....22024-05-24 15:49:21,956.v3_listening_worker.INFO Done

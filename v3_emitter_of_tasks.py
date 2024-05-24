@@ -75,5 +75,5 @@ if __name__ == "__main__":
 
     # Send each task to the queue
     for task in tasks:
-        send_message("localhost", "task_queue2", task)
+        send_message("localhost", "dgraves4_task_queue", task)
         time.sleep(3)  # Simulate delay for sending tasks
