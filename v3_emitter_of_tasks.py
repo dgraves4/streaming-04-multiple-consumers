@@ -1,10 +1,9 @@
 """
-    This program sends messages read from a CSV file to a queue on the RabbitMQ server.
-    Adds logging instead of print statements for better visibility.
+This program sends messages read from a CSV file to a queue on the RabbitMQ server.
+Adds logging instead of print statements for better visibility.
 
-    Author: Derek Graves
-    Date: May 24, 2024
-
+Author: Derek Graves
+Date: May 24, 2024
 """
 
 import pika
@@ -16,6 +15,13 @@ from util_logger import setup_logger
 
 # Set up logger
 logger, logname = setup_logger(__file__)
+
+# Configuration variables
+HOST = "localhost"
+QUEUE_NAME = "dgraves4_task_queue"
+CSV_FILE = "tasks.csv"
+SHOW_OFFER = False
+DELAY = 3  # Delay in seconds between sending tasks
 
 def offer_rabbitmq_admin_site(show_offer=True):
     """Offer to open the RabbitMQ Admin website"""
@@ -50,9 +56,10 @@ def send_message(host: str, queue_name: str, message: str):
         sys.exit(1)
     finally:
         # close the connection to the server
-        conn.close()
+        if conn.is_open:
+            conn.close()
 
-def read_tasks_from_csv(filename='tasks.csv'):
+def read_tasks_from_csv(filename=CSV_FILE):
     """Read tasks from a CSV file and return a list of tasks"""
     tasks = []
     try:
@@ -67,13 +74,13 @@ def read_tasks_from_csv(filename='tasks.csv'):
     return tasks
 
 if __name__ == "__main__":
-    show_offer = False  # Can be set to True if you want to offer opening the RabbitMQ Admin site
-    offer_rabbitmq_admin_site(show_offer)
+    offer_rabbitmq_admin_site(SHOW_OFFER)
 
     # Read tasks from the CSV file
     tasks = read_tasks_from_csv()
 
     # Send each task to the queue
     for task in tasks:
-        send_message("localhost", "dgraves4_task_queue", task)
-        time.sleep(3)  # Simulate delay for sending tasks
+        send_message(HOST, QUEUE_NAME, task)
+        time.sleep(DELAY)  # Simulate delay for sending tasks
+
