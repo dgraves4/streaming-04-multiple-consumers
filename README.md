@@ -6,8 +6,8 @@ This project uses RabbitMQ to distribute tasks to multiple workers using a singl
 
 ## Author
 
-Derek Graves
-May 24, 2024
+**Derek Graves**  
+**Date:** May 24, 2024
 
 ## Before You Begin
 
