@@ -30,7 +30,7 @@ def callback(ch, method, properties, body):
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
 # Define a main function to run the program
-def main(hn: str = "localhost", qn: str = "task_queue2"):
+def main(hn: str = "localhost", qn: str = "dgraves4_task_queue"):
     """Continuously listen for task messages on a named queue."""
 
     # When a statement can go wrong, use a try-except block
